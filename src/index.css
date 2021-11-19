@@ -28,6 +28,7 @@ button {
   border: none;
   color: white;
   cursor: pointer;
+  z-index: 1;
 }
 
 h1, h2 {
@@ -74,17 +75,16 @@ h1, h2 {
 .length {
   display: flex;
   flex-direction: column;
-  padding-left: 30px;
-  padding-right: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .value-length {
-  padding: 0 10px 0 10px;
-  width: 40px;
+  width: 44px;
 }

@@ -221,11 +221,12 @@ class Control extends React.Component {
   }
 
   clickIncrease = (e) => {
-    store.dispatch(increaseAction(e.target.className))
+    store.dispatch(increaseAction(e.target.id.replace('-increment', '')))
+    console.log(e.target.id)
   }
 
   clickDecrease = (e) => {
-    store.dispatch(decreaseAction(e.target.className))
+    store.dispatch(decreaseAction(e.target.id.replace('-decrement', '')))
   }
 
   render() {
@@ -236,12 +237,12 @@ class Control extends React.Component {
           <h2 id='session-label'>Session Length</h2>
           <div className='content'>
             <button className='session' onClick={this.clickIncrease} id="session-increment">
-              <i className="fas fa-arrow-up fa-2x"></i>
+              <i id="session-increment" className="fas fa-arrow-up fa-2x"></i>
             </button>
 
             <h2 className='value-length' id='session-length'>{this.props.sessionLength}</h2>
             <button className='session' onClick={this.clickDecrease} id="session-decrement">
-              <i className="fas fa-arrow-down fa-2x"></i>
+              <i id="session-decrement" className="fas fa-arrow-down fa-2x"></i>
             </button>
           </div>
         </div>
@@ -249,11 +250,11 @@ class Control extends React.Component {
           <h2 id='break-label'>Break Length</h2>
           <div className='content'>
             <button className='break' onClick={this.clickIncrease} id="break-increment">
-              <i className="fas fa-arrow-up fa-2x"></i>
+              <i id="break-increment" className="fas fa-arrow-up fa-2x"></i>
             </button>
             <h2 className='value-length' id='break-length'>{this.props.breakLength}</h2>
             <button className='break' onClick={this.clickDecrease} id="break-decrement">
-              <i className="fas fa-arrow-down fa-2x"></i>
+              <i id="break-decrement" className="fas fa-arrow-down fa-2x"></i>
             </button>
           </div>
         </div>
